@@ -1,1 +1,2 @@
-print("Hello world")
+class game:
+  game_no=0
