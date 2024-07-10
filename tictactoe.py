@@ -15,4 +15,8 @@ class game:
             print("--------")
         return
     def fill1(self):
-        p
+        print("Player-1:Enter the row and column:")
+        i,j=int(input()),int(input())
+        while self.arr[i][j]==self.p1 or self.arr[i][j]==self.p2 :
+            print('Sorry.Enter the correct row and column:')
+
