@@ -51,4 +51,19 @@ class game:
             else :
                 print('Player-2 won the game')
         return
-    
+chk='y'
+while chk=='y' or chk=='Y' :
+    ob=game()
+    while ob.char=='E' :
+        if ob.char==ob.p1 or ob.char==ob.p2 :
+            break
+        ob.fill1()
+        ob.disp()
+        ob.condchk_res()
+        if ob.char==ob.p1 or ob.char==ob.p2 :
+            break
+        ob.fill2()
+        ob.disp()
+        ob.condchk_res()
+    del ob
+    chk=input('Do you want to continue:(y/n):')
