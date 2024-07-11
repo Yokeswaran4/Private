@@ -34,4 +34,21 @@ class game:
         m=0
         while m<=3 :
             if self.arr[m][0]==self.arr[m][1] and self.arr[m][1]==self.arr[m][2] :
-                
+                self.char=self.arr[m][0]
+                break
+            if self.arr[0][m]==self.arr[1][m] and self.arr[1][m]==self.arr[2][m] :
+                self.char=self.arr[0][m]
+                break
+        if self.arr[0][0]==self.arr[1][1] and self.arr[1][1]==self.arr[2][2] :
+            self.char=self.arr[0][0]
+        if self.arr[0][2]==self.arr[1][1] and self.arr[1][1]==self.arr[2][0] :
+            self.char=self.arr[1][1]
+        if self.char=='E' :
+            pass
+        else :
+            if self.char==self.p1 :
+                print('Player-1 won the game')
+            else :
+                print('Player-2 won the game')
+        return
+    
