@@ -12,12 +12,15 @@ class game:
         for r in self.arr:
             for m in r:
                 print(m,end='|')
-            print("--------")
+            print("\n--------")
         return
     def fill1(self):
         print("Player-1:Enter the row and column:")
         i,j=int(input()),int(input())
-        while self.arr[i][j]==self.p1 or self.arr[i][j]==self.p2 :
+        while i>=3 or j>=3 :
+            print('Sorry.Enter the correct row and column:')
+            i,j=int(input()),int(input())
+        while self.arr[i-1][j-1]==self.p1 or self.arr[i-1][j-1]==self.p2 :
             print('Sorry.Enter the correct row and column:')
             i,j=int(input()),int(input())
         self.arr[i-1][j-1]=self.p1
@@ -25,23 +28,27 @@ class game:
     def fill2(self):
         print('Player-2:Enter the row and column:')
         i,j=int(input()),int(input())
-        while self.arr[i][j]==self.p1 or self.arr[i][j]==self.p2 :
+        while i>=3 or j>=3 :
+            print('Sorry.Enter the correct row and column:')
+            i,j=int(input()),int(input())
+        while self.arr[i-1][j-1]==self.p1 or self.arr[i-1][j-1]==self.p2 :
             print('Sorry.Enter the correct row and column:')
             i,j=int(input()),int(input())
         self.arr[i-1][j-1]=self.p2
         return
     def condchk_res(self) :
         m=0
-        while m<=3 :
-            if self.arr[m][0]==self.arr[m][1] and self.arr[m][1]==self.arr[m][2] :
+        while m<3 :
+            if self.arr[m][0]==self.arr[m][1] and self.arr[m][1]==self.arr[m][2] and self.arr[m][2]!=' ':
                 self.char=self.arr[m][0]
                 break
-            if self.arr[0][m]==self.arr[1][m] and self.arr[1][m]==self.arr[2][m] :
+            if self.arr[0][m]==self.arr[1][m] and self.arr[1][m]==self.arr[2][m] and self.arr[2][m]!=' ':
                 self.char=self.arr[0][m]
                 break
-        if self.arr[0][0]==self.arr[1][1] and self.arr[1][1]==self.arr[2][2] :
+            m+=1
+        if self.arr[0][0]==self.arr[1][1] and self.arr[1][1]==self.arr[2][2] and self.arr[2][2]!=' ':
             self.char=self.arr[0][0]
-        if self.arr[0][2]==self.arr[1][1] and self.arr[1][1]==self.arr[2][0] :
+        if self.arr[0][2]==self.arr[1][1] and self.arr[1][1]==self.arr[2][0] and self.arr[1][1]!=' ':
             self.char=self.arr[1][1]
         if self.char=='E' :
             pass
