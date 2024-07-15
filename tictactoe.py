@@ -1,3 +1,4 @@
+#This game cannot give draw as a result
 class game:
     game_no=0
     def __init__(self):
